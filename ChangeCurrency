@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    So tien :
+    <input type="text" id ="so_tien" value=""><br>
+    From Currency :
+    <select >
+        <option id = "VN" value="VND">VND</option><br>
+    </select><br>
+    To Currency :
+    <select>
+        <option id = "US" value="USD">USD</option><br>
+    </select>
+</form>
+<input class="button" type = "submit" value="SUBMIT" ><br>
+Result:
+</body>
+</html>
