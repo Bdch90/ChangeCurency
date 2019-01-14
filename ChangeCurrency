@@ -12,6 +12,7 @@
     <select id="ddlFromCurrency">
         <option value="vnd" selected>VND</option>
         <option value="usd">USD</option>
+        5
     </select><br>
     To Currency :
     <select id='ddlToCurrency'>
@@ -33,17 +34,26 @@ Result:
         var selectedFromCurrency = ddlFromCurrency.options[ddlFromCurrency.selectedIndex].value;
         var ddlToCurrency = document.getElementById('ddlToCurrency');
         var selectedToCurrency = ddlToCurrency.options[ddlToCurrency.selectedIndex].value;
-        // var lblResult = document.getElementById("lblResult");
 
         if (selectedFromCurrency == 'vnd') {
             if (selectedToCurrency == 'usd') {
-                let lblResult = txtAmount / 23000;
-                document.getElementById("lblResult").innerText= ""+ lblResult;
+                var lblResult = txtAmount / 23000;
+                document.getElementById("lblResult").innerText = "" + lblResult;
             }else {
-
+                alert("vui long chon lai");
+            }
+        }else if(selectedFromCurrency =='usd') {
+            if (selectedToCurrency == "vnd") {
+                lblResult = txtAmount*23000;
+                document.getElementById('lblResult').innerText = lblResult+'';
+            }else {
+                alert('vui long chon lai');
             }
         }
     }
+
+
+
 </script>
 </body>
 </html>
