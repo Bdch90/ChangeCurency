@@ -6,18 +6,44 @@
 </head>
 <body>
 <form>
-    So tien :
-    <input type="text" id ="so_tien" value=""><br>
+    So luong :
+    <input type="number" id="txtAmount" value=""><br>
     From Currency :
-    <select >
-        <option id = "VN" value="VND">VND</option><br>
+    <select id="ddlFromCurrency">
+        <option value="vnd" selected>VND</option>
+        <option value="usd">USD</option>
     </select><br>
     To Currency :
-    <select>
-        <option id = "US" value="USD">USD</option><br>
-    </select>
+    <select id='ddlToCurrency'>
+        <option value="vnd">VND</option>
+        <option value="usd" selected>USD</option>
+    </select><br>
+
+    <input class="button" type="button" onclick="calculate();" value="Change"><br>
 </form>
-<input class="button" type = "submit" value="SUBMIT" ><br>
+
 Result:
+<h1 id="lblResult"></h1>
+
+<script>
+
+    function calculate() {
+        var txtAmount = document.getElementById('txtAmount').value;
+        var ddlFromCurrency = document.getElementById('ddlFromCurrency');
+        var selectedFromCurrency = ddlFromCurrency.options[ddlFromCurrency.selectedIndex].value;
+        var ddlToCurrency = document.getElementById('ddlToCurrency');
+        var selectedToCurrency = ddlToCurrency.options[ddlToCurrency.selectedIndex].value;
+        // var lblResult = document.getElementById("lblResult");
+
+        if (selectedFromCurrency == 'vnd') {
+            if (selectedToCurrency == 'usd') {
+                let lblResult = txtAmount / 23000;
+                document.getElementById("lblResult").innerText= ""+ lblResult;
+            }else {
+
+            }
+        }
+    }
+</script>
 </body>
 </html>
